@@ -3,7 +3,6 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import "./css/Navbar.css";
-import { useTranslation } from "react-i18next";
 
 
 const Navbar = ({
@@ -14,7 +13,7 @@ const Navbar = ({
     const navTo = (url) => {
         navigate(url);
     }
-    const { t } = useTranslation();
+    
 
     return (
         <nav className="navbar navbar-light bg-light justify-content-between px-3">
@@ -23,8 +22,8 @@ const Navbar = ({
                 isAuthenticated ?
                     (
                         <div className="d-flex">
-                            <Button type="button" id="car-button" className="btn btn-light mr-2 btn-success" onClick={() => navTo('/cars')}>{t("navbarCars")}</Button>
-                            <DropdownButton id="dropdown-basic-button" title={t("navbarLanguages")}>
+                            <Button type="button" id="car-button" className="btn btn-light mr-2 btn-success" onClick={() => navTo('/cars')}>Cars</Button>
+                            <DropdownButton id="dropdown-basic-button" title="Languages">
                                 <Dropdown.Item onClick={() => { selectLanguage('en'); navTo('/cars') }}>English</Dropdown.Item>
                                 <Dropdown.Item onClick={() => { selectLanguage('de'); navTo('/cars/de') }}>German</Dropdown.Item>
                             </DropdownButton>
