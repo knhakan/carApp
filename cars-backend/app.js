@@ -18,7 +18,5 @@ app.use((req, res, next) => {
     });
 });
 
-app.get
-
 app.listen(5000);
 module.exports = app
