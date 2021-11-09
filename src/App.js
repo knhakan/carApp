@@ -27,7 +27,7 @@ function App() {
           fallbackLng: "en",
           interpolation: { escapeValue: false },
       });
-      selectLang('de')
+      selectLang('en')
   }, [])
 
   React.useEffect(() => {
@@ -43,7 +43,7 @@ function App() {
   }
   return (
     <Router>
-        <div className="App">
+        <div>
             <Navbar selectLanguage={selectLang} isAuthenticated={isAuthenticated}
             />
             <Routes>
